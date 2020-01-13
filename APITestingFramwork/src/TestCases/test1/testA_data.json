@@ -1,0 +1,12 @@
+{
+	"url": "http://www.webxml.com.cn/WebServices/RandomFontsWebService.asmx/getCharFonts",
+	"byFontsLength": 6,
+	"headers": [
+	{
+		"User-Agent" : "Mozilla/5.0 (Windows NT 6.1;Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36" 
+	},
+	{ 
+		"Accept-Language": "en-US,en;q=0.9"
+	}],
+	"Token": ""
+}
