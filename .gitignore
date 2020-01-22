@@ -1,4 +1,4 @@
 *.html
 *.log
 *.png
-!Attachment/*
+!/SeleniumPythonFramework/src/TestScript/Module2/LaunchBaiduAndSearch1/Attachment/*.png
