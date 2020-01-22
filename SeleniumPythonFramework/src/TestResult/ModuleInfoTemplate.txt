@@ -1,7 +1,0 @@
-	<tr><td class="centertext">ModuleName</td>
-	<td class="centertext">ModuleTotalScriptCount</td>
-	<td class="centertext">ModuleScriptPassedCount</td>
-	<td class="centertext">ModuleScriptFailedCount</td>
-	<td class="col_graph"><div class="graph"><b class="pass_bar" 	style="ModuleScriptPassPercentage"></b>
-	<b class="fail_bar" style="ModuleScriptFailPercentage"></b>
-	</div></td></tr>

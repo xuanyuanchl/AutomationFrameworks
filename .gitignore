@@ -1,0 +1,6 @@
+*.html
+TestResult/*
+test_report/*
+screenshots/*
+*.log
+*.png
