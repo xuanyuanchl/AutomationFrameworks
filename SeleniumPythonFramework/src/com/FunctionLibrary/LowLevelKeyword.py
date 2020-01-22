@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 
 from com.Enumeration.StepResult import StepResult
-from com.FunctionLibrary.webdriverFractory import webdriverFractory
+from com.FunctionLibrary.webdriverFractory import webdriverFactory
 from com.TestPlanInfo.TestStepResult import TestStepResult
 from com.TestSettings.Settings import Settings
 from com.Utility.Tool import Tool
@@ -30,7 +30,7 @@ class LowLevelKeyword():
                 ' execution was ' + StepResult.Error.name + \
                 '. Actual exception : ' + str(e)
         else:
-            webdriverFractory.waitforready(self.settings.wedriver)
+            webdriverFactory.waitforready(self.settings.wedriver)
             self.testStepResult.stepResult = StepResult.Passed
             self.testStepResult.endTime = Tool.CurrentTime()
             self.testStepResult.stepLog = str(self.testStepResult.endTime) + ' ' + \
