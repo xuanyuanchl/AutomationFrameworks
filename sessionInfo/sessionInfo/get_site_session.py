@@ -73,10 +73,10 @@ class GetSessionAndToken():
         self.browser.close()
 
 
-#if __name__ == "__main__":
-#    OBJ = GetSessionAndToken()
-#    OBJ.login_system()
-#    SESSIONID = OBJ.get_sessionid()
-#    TOKENVALUE = OBJ.get_token()
-#    print(f"sessionid为： {SESSIONID}\n"
-#          f"token为：     {TOKENVALUE}")
+if __name__ == "__main__":
+    OBJ = GetSessionAndToken()
+    OBJ.login_system()
+    SESSIONID = OBJ.get_sessionid()
+    TOKENVALUE = OBJ.get_token()
+    print(f"sessionid为： {SESSIONID}\n"
+          f"token为：     {TOKENVALUE}")
