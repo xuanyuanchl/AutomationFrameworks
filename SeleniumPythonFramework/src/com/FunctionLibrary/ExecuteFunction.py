@@ -102,8 +102,8 @@ class ExecuteFunction(object):
                 testStepResult.StepNumber = str(i - 1)
                 testStepResult.StepDescription = description
                 testStepResult.StepKeyword = keyword
-                testStepResult.Expect = self.settings.CurrentScriptPath.replace(
-                    '.xlsx', '') + "/Attachment/" + expect
+                testStepResult.Expect = '../../../../..' + self.settings.CurrentScriptPath.replace(
+                    '.xlsx', '').split('src')[1] + "/Attachment/" + expect
                 testStepResult.StepTagName = tagName
                 testStepResult.StepParameter = parameter
                 testStepResult.StepObject = objectName

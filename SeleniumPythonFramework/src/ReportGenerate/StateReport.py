@@ -1,37 +1,43 @@
-from com.TestSettings.Settings import Settings
 import os
-from com.TestPlanInfo.TestCaseResult import TestCaseResult
-from com.Utility.Tool import Tool
+
 from ReportGenerate.DetailsInfoReport import DetailsInfoReport
+from com.TestPlanInfo.TestCaseResult import TestCaseResult
+from com.TestSettings.Settings import Settings
+from com.Utility.Tool import Tool
+
 
 class StateReport(object):
     """description of class"""
-    StateInfoTemplate :str = None
-    CaseStateInfoTemplate :str = None
-    CaseStateInfoReport :str = None
-    planInfoHtml :str = None
-    caseSummaryInfoTemplate :str = None
-    caseSummaryInfoReportPath :str = None
-    settings :Settings = None
+    StateInfoTemplate: str = None
+    CaseStateInfoTemplate: str = None
+    CaseStateInfoReport: str = None
+    planInfoHtml: str = None
+    caseSummaryInfoTemplate: str = None
+    caseSummaryInfoReportPath: str = None
+    settings: Settings = None
 
     def __init__(self):
         self.settings = Settings.getSettings()
         self.StateInfoTemplate = os.getcwd() + '\\TestResult\\StateInfoTemplate.txt'
         self.CaseStateInfoTemplate = os.getcwd() + '\\TestResult\\CaseStateInfoTemplate.txt'
-        self.CaseStateInfoReport = self.settings.CurrentTestResultFolder + '\\CaseStateInfoReport.txt'
-        self.planInfoHtml = self.settings.CurrentTestResultFolder + '\\' + self.settings.planFile + ".html"
-        self.caseSummaryInfoTemplate = os.getcwd() + '\\TestResult\\CaseSummaryInfoTemplate.txt'
-        self.caseSummaryInfoReportPath = self.settings.CurrentTestResultFolder + '\\' + "CaseSummaryInfoReport.txt"
+        self.CaseStateInfoReport = self.settings.CurrentTestResultFolder + \
+            '\\CaseStateInfoReport.txt'
+        self.planInfoHtml = self.settings.CurrentTestResultFolder + \
+            '\\' + self.settings.planFile + ".html"
+        self.caseSummaryInfoTemplate = os.getcwd(
+        ) + '\\TestResult\\CaseSummaryInfoTemplate.txt'
+        self.caseSummaryInfoReportPath = self.settings.CurrentTestResultFolder + \
+            '\\' + "CaseSummaryInfoReport.txt"
 
     def CreateCaseStateInfoReport(self):
         if not os.path.exists(self.CaseStateInfoReport):
-                Tool.createFile(self.CaseStateInfoReport)
+            Tool.createFile(self.CaseStateInfoReport)
 
     def CreateCaseSummaryInfoReport(self):
         if not os.path.exists(self.caseSummaryInfoReportPath):
-                Tool.createFile(self.caseSummaryInfoReportPath)
+            Tool.createFile(self.caseSummaryInfoReportPath)
 
-    def writeCaseSummaryInfo(self, testCaseResult:TestCaseResult):
+    def writeCaseSummaryInfo(self, testCaseResult: TestCaseResult):
         CSIT = Tool.readFile(self.caseSummaryInfoTemplate)
         CSIT = CSIT.replace("TestCaseNumber", testCaseResult.TestCaseNumber)
         CSIT = CSIT.replace("TestCaseFile", testCaseResult.TestCaseFile)
@@ -47,19 +53,22 @@ class StateReport(object):
         Tool.appendFile(self.caseSummaryInfoReportPath, CSIT)
 
     def WriteCaseStateInfo(self):
-        CaseStateInfo :str = ''
+        CaseStateInfo: str = ''
         for CaseResult in self.settings.testPlanResult.TestCaseResultCollection:
             self.writeCaseSummaryInfo(CaseResult)
             CSIT = Tool.readFile(self.CaseStateInfoTemplate)
             CSIT = CSIT.replace("TestCaseNumber", CaseResult.TestCaseNumber)
             CSIT = CSIT.replace("TestCaseName", CaseResult.TestCaseName)
-            StateInfo :str = ''
+            StateInfo: str = ''
             for StateResult in CaseResult.TestStateResultCollection:
                 SIT = Tool.readFile(self.StateInfoTemplate)
-                SIT = SIT.replace("TestStateNumber", StateResult.TestStateNumber)
-                SIT = SIT.replace("TestStateDescription", StateResult.TestStateDescription)
+                SIT = SIT.replace("TestStateNumber",
+                                  StateResult.TestStateNumber)
+                SIT = SIT.replace("TestStateDescription",
+                                  StateResult.TestStateDescription)
                 SIT = SIT.replace("TestStateFile", StateResult.TestStateFile)
-                SIT = SIT.replace("TestStateReportPath", StateResult.RelativeTestStateReportPath)
+                SIT = SIT.replace("TestStateReportPath",
+                                  StateResult.RelativeTestStateReportPath)
                 if StateResult.StateResult == 'NotRun':
                     SIT = SIT.replace("ResultCategory", "notruncentertext")
                 elif StateResult.StateResult == 'Error' or StateResult.StateResult == 'Failed':

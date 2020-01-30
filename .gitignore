@@ -1,4 +1,5 @@
 *.html
 *.log
 *.png
+*.pyc
 !/SeleniumPythonFramework/src/TestScript/Module2/LaunchBaiduAndSearch1/Attachment/*.png
