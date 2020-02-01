@@ -1,14 +1,14 @@
 '''To send mail'''
 
-# !/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 import email
-from email.mime.base import MIMEBase
+from email.mime.application import MIMEApplication
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import os
 import smtplib
+import sys
+project = r'C:\Users\o5lt\eclipse-workspace\SendMail'  # 项目所在路径
+sys.path.append(os.getcwd().split(project)[0] + project)
 
 
 class SendMail:
@@ -48,17 +48,16 @@ class SendMail:
         text_msg = MIMEText(self.file_body)
         main_msg.attach(text_msg)
         try:
-            contype = 'application/octet-stream'
-            maintype, subtype = contype.split('/', 1)
-
-            data = open(self.file_path, 'rb')
-            file_msg = MIMEBase(maintype, subtype)
-            file_msg.set_payload(data.read())
-            data.close()
-            email.encoders.encode_base64(file_msg)
             basename = os.path.basename(self.file_path.split('/')[-1])
+            data = open(self.file_path, 'rb')
+            file_msg = MIMEApplication(data.read())
+            #file_msg = MIMEBase('text', 'html', filename=basename)
             file_msg.add_header('Content-Disposition',
                                 'attachment', filename=basename)
+            # file_msg.set_payload(data.read())
+            data.close()
+            # email.encoders.encode_base64(file_msg)
+
             main_msg.attach(file_msg)
         except Exception as err_exception:
             print(err_exception)
@@ -67,7 +66,7 @@ class SendMail:
         main_msg['To'] = ";".join(self.to_list)
         main_msg['Cc'] = ";".join(self.copy_list)
 
-        # 标题头
+        # 标题头c
         main_msg['Subject'] = self.file_header
         main_msg['Date'] = email.utils.formatdate()
 
@@ -85,4 +84,3 @@ if __name__ == '__main__':
     RECEIVERS = ['616191459@qq.com']  # 接收人邮箱
     S = SendMail(SENDER, RECEIVERS, [], MAIL_PASS, ATTACHMENT, TITLE, CONTENT)
     S.send()
-    print('发送成功！')
