@@ -1,9 +1,12 @@
 '''This is a circulator, run each test case in test plan, and generate html report'''
 
 import logging
+# import os
+# import sys
 import traceback
 import unittest
 
+from MailSender.mail_sender import SendMail
 from ReportGenerate.StateReport import StateReport
 from ReportGenerate.SummaryReport import SummaryReport
 from ReportGenerate.SystemReport import SystemReport
@@ -11,6 +14,10 @@ from com.FunctionLibrary.ExecuteFunction import ExecuteFunction
 from com.TestPlanInfo.TestStateResult import TestStateResult
 from com.TestSettings.Settings import Settings
 from com.Utility.Tool import Tool
+
+#
+# PROJECT = r'D:\GitGUI\SeleniumPythonFramework'  # 项目所在路径
+# sys.path.append(os.getcwd().split(PROJECT)[0] + PROJECT)
 
 
 class MainFramework(unittest.TestCase):
@@ -89,8 +96,16 @@ class MainFramework(unittest.TestCase):
         state_report.WriteCaseStateInfo_toHtml()
         logging.info(
             f'create report {system_report.planInfoHtml} successfully')
-        MainFramework.settings = None
+
         logging.info('Run tests finished')
+
+        html_report = MainFramework.settings.CurrentTestResultFolder + \
+            '\\' + MainFramework.settings.planFile + ".html"
+
+        s = SendMail(html_report)
+        s.send()
+
+        MainFramework.settings = None
 
 
 if __name__ == "__main__":

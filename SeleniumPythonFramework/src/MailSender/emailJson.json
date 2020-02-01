@@ -1,0 +1,8 @@
+{
+	"SMTPAuthenticationCode": "xxmyrwzexgiibdhb",
+	"sender": "616191459@qq.com",
+	"receivers": ["616191459@qq.com"],
+	"cclist": [],
+	"content" : "This is summary html report!",
+    "title" : "Html report"
+}

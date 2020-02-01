@@ -1,2 +1,4 @@
 eclipse.preferences.version=1
+encoding//src/MailSender/mail_sender.py=UTF-8
+encoding//src/com/TestSettings/Settings.py=UTF-8
 encoding//src/main_framework.py=UTF-8

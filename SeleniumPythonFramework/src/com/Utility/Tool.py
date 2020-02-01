@@ -1,20 +1,24 @@
+from builtins import staticmethod
 import datetime
-from selenium import webdriver
+import json
+
 from openpyxl import load_workbook
 from openpyxl.workbook.workbook import Workbook
+from selenium import webdriver
+
 
 class Tool(object):
     """description of class"""
     @property
     def RanString(self):
-        return datetime.datetime.strftime(datetime.datetime.now(),'%m%d_%H%M%S')
+        return datetime.datetime.strftime(datetime.datetime.now(), '%m%d_%H%M%S')
 
     @staticmethod
     def CurrentTime():
-        return datetime.datetime.strftime(datetime.datetime.now(),'%m-%d %H:%M:%S')
+        return datetime.datetime.strftime(datetime.datetime.now(), '%m-%d %H:%M:%S')
 
     @staticmethod
-    def closeBrowser(wedriver:webdriver):
+    def closeBrowser(wedriver: webdriver):
         wedriver.close()
 
     @staticmethod
@@ -39,15 +43,27 @@ class Tool(object):
             '''create a file'''
 
     @staticmethod
-    def saveScreenShot(wedriver:webdriver, fileName):
+    def saveScreenShot(wedriver: webdriver, fileName):
         wedriver.save_screenshot(fileName)
 
     @staticmethod
     def openExcel(excelName):
         wb = load_workbook(excelName)
         return wb
-        
+
     @staticmethod
-    def getMaxRow(wb:Workbook, sheetName:str):
+    def getMaxRow(wb: Workbook, sheetName: str):
         wb_sheet = wb[sheetName]
         return wb_sheet.max_row
+
+
+class jsonParse(object):
+    data: object = None
+
+    def loadJson(self, file):
+        with open(file) as fp:
+            self.data = json.load(fp)
+            return self.data
+
+    def getValue(self, key):
+        return self.data[key]
