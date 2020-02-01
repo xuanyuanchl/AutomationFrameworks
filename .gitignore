@@ -1,5 +1,14 @@
 *.html
 *.log
+*.txt
 *.png
 *.pyc
-!/SeleniumPythonFramework/src/TestScript/Module2/LaunchBaiduAndSearch1/Attachment/*.png
+!/*/src/TestScript/Module2/LaunchBaiduAndSearch1/Attachment/*.png
+!/*/src/TestResult/DetailInfoTemplate.html
+!/*/src/TestResult/PlanInfoTemplate.html
+!/*/src/TestResult/CaseInfoTemplate.txt
+!/*/src/TestResult/CaseStateInfoTemplate.txt
+!/*/src/TestResult/CaseSummaryInfoTemplate.txt
+!/*/src/TestResult/ModuleInfoTemplate.txt
+!/*/src/TestResult/StateInfoTemplate.txt
+

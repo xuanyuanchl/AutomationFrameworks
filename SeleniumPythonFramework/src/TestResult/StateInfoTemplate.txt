@@ -1,0 +1,6 @@
+                        <tr>
+                            <td class="centertext" width="3%">TestStateNumber</td>
+                            <td class="lefttext" width="50%">TestStateDescription</td>
+                            <td class="lefttext" width="37%">TestStateFile</td>
+                            <td class="ResultCategory" width="10%"><a href="TestStateReportPath">StateResult</a></td>
+                        </tr>

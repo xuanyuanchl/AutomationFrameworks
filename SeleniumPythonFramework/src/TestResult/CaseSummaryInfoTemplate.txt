@@ -1,0 +1,7 @@
+<tr>
+            <td class="centertext">TestCaseNumber</td>
+            <td class="lefttext"><a href="#TestCaseNumber">TestCaseFile</a></td>
+            <td class="lefttext">Sample_Data.xls</td>
+            <td class="lefttext">StartTime</td>
+            <td class="ResultCategory">CaseResult</td>
+        </tr>

@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<style media="all" type="text/css">
+  body {
+    font-family: Arial;
+    font-size: 0.8em;
+    color: black;
+    padding: 0.5em; 
+  }
+  .filename {
+    color: black;
+    font-weight:bold;
+  }     
+  table.suite {
+    width: 100%;
+    border: 1px solid black;
+    margin: 0.2em;
+    padding: 0.2em 0em 0em 0em;
+    background:white;
+  }
+  table.sub {
+    width: 100%;
+    border: 1px solid black;
+    margin: 0em 0em;
+    padding: 0em;
+    border-collapse: collapse;
+    border: 1px solid black;
+    margin : 0.5em 0em 0em 0em;
+    empty-cells:show;
+    background:white;
+  }
+  div.foldingbutton {
+    text-align: center;
+    line-height: 0.8em;
+    font-size: 1em;
+    margin: 0.2em 0.4em 0em 0.1em;
+    height: 0.9em;
+    width: 0.9em;
+    float: left;
+    text-decoration: none;
+    font-weight: bold; 
+    border: 1px solid red;
+    border: 1px solid red;
+    background:white;
+  }
+  div.foldingbutton:hover {
+    background: yellow;
+  } 
+  table.claim {
+    text-align: right;
+    width:100%;
+    color:black;
+    font-size:0.8em;
+    padding:0.1em;
+    font-style:italic;
+    font-weight:bold;
+  }
+  td.headpart {
+    text-align: left;
+    width:25%;
+    font-weight:bold;
+    color:black;
+    border: 1px solid black;
+  }
+  td.subtitle {
+    text-align: center;
+    background-color:gainsboro;
+    border: 1px solid black;
+    font-weight:bold;
+  }
+  td.lefttext {
+    text-align: left;
+    color:mediumblue;
+    border: 1px solid black;
+  }
+  td.remarktext {
+    text-align: left;
+    color:red;
+    border: 1px solid black;
+  }
+  td.detailtext {
+    text-align: left;
+    color:mediumblue;
+    border: 1px solid black;
+    word-break: break-all;
+  }
+  td.logtext {
+    text-align: left;
+    color:mediumblue;
+    border: 1px solid black;
+    overflow:hidden;
+  }
+  td.centertext {
+    text-align: center;
+    color:mediumblue;
+    border: 1px solid black;
+  }
+  td.passedcentertext  {
+    text-align: center;
+    color:mediumblue;
+    border: 1px solid black;
+    background-color:springgreen;
+  }
+  td.failedcentertext  {
+    text-align: center;
+    color:mediumblue;
+    border: 1px solid black;
+    background-color:orangered;
+  }
+  td.notruncentertext  {
+    text-align: center;
+    color:mediumblue;
+    border: 1px solid black;
+    background-color:darkgray;
+  }
+  td.col_graph  {
+    border: 1px solid black;
+  }
+  .back  {
+    float:right;
+    margin-right: 0.5em;
+  }
+  .pass_bar { 
+    background: springgreen;
+  }
+  .fail_bar {
+    background: orangered;
+  }
+  .graph { 
+    position: relative;
+    border: 1px solid black;
+    width: 92%;
+    height: 0.75em;
+    padding: 0px;
+    background: #E9E9E9;
+  }
+  .graph b {
+    display: block;
+    position: relative;
+    height: 100%;
+    float: left;
+    font-size: 4px;
+  }
+</style>
+    <script type="text/javascript">
+        function toggle_child_visibility1(element_id) {
+            if (document.getElementById(element_id + '_foldlink') != null) {
+                toggle_visibility(element_id + '_foldlink')
+            }
+            if (document.getElementById(element_id + '_unfoldlink') != null) {
+                toggle_visibility(element_id + '_unfoldlink')
+            }
+	    ts_visibility()
+        }
+        function toggle_child_visibility2(element_id) {
+            if (document.getElementById(element_id + '_foldlink') != null) {
+                toggle_visibility(element_id + '_foldlink')
+            }
+            if (document.getElementById(element_id + '_unfoldlink') != null) {
+                toggle_visibility(element_id + '_unfoldlink')
+            }
+	    t_visibility()
+        }
+
+        function toggle_visibility(element_id) {
+            var element = document.getElementById(element_id)
+            if (element == null) {
+                return
+            }
+            if (element.style.display == 'none') {
+                element.style.display = 'block'
+            }
+            else {
+                element.style.display = 'none'
+            }
+        }
+
+        function t_visibility() {
+            var elements= document.getElementsByTagName("div");
+	    var ia=0;
+	    for(ia=3;ia<elements.length;ia++){
+	        elements[ia].style.display='none'
+	    }
+        }
+        function ts_visibility() {
+            var elementcs= document.getElementsByTagName("div");
+	    var ib=0;
+	    for(ib=1;ib<elementcs.length;ib++){
+		    elementcs[ib].style.display='block'
+	    }
+        }
+    </script>
+    </script>
+        <title>Automation Summary Report</title>
+        </head>
+        <body>
+        <table class="claim"><tr><td>Developed by NCS_TCC Team</td></tr></table>
+        <table class="suite"><tr><td><a class="back" onclick="javascript:history.back();" href="#Summary">Back to Summary</a>
+            <div class="foldingbutton" id="suite00000TestStateNumber_foldlink" onclick="toggle_child_visibility1('suite00000TestStateNumber');" style="display: block;">-</div>
+            <div class="foldingbutton" id="suite00000TestStateNumber_unfoldlink" onclick="toggle_child_visibility2('suite00000TestStateNumber');" style="display: none;">+</div>
+                <span class="filename"><a name="TestStateNumber">TestStateFile</a></span></td></tr>
+                <tr><td><div id="suite00001TestStateNumber_children">
+    <table class="sub">
+
+        <tr>
+            <td class="subtitle">SN</td>
+            <td class="subtitle">Description</td>
+            <td class="subtitle">Keyword</td>
+            <td class="subtitle">Parameter</td>
+            <td class="subtitle">Object</td>
+            <td class="subtitle">Expect</td>
+            <td class="subtitle">Actual</td>
+            <td class="subtitle">Log</td>
+        </tr>
+	StepInfo
+    </table>
+</table>
+
