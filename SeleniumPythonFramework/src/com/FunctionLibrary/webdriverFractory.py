@@ -6,7 +6,7 @@ class webdriverFactory(object):
     """create a driver"""
 
     script = """var callback = arguments[arguments.length - 1];
-    var el = document.querySelector('html');
+    var el = document.querySelector('ng-app');
     if (!window.angular) {
         callback('False')
     }

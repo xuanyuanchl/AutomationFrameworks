@@ -24,6 +24,6 @@ runner = HTMLTestRunner.HTMLTestRunner(
     stream=fp,
     title='EOL test',
     description='This demonstrates the report output by HTMLTestRunner.')
-runner.run(suite1)
 
+runner.run(suite1)
 fp.close()

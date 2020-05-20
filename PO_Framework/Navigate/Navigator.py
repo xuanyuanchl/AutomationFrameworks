@@ -6,6 +6,8 @@ Created on May 9, 2020
 '''
 
 from selenium.webdriver.support.wait import WebDriverWait
+
+from GetConfiguration.SeleniumTestsConfigurationSection import seleniumTestsConfigurationSection
 from Support.Helper import helper
 
 
@@ -13,7 +15,6 @@ class navigator():
     __driver = None
     __siteUrl = None
     __helper = None
-    ScreenShotEnabled = False
     PageLoadTimeout = 10
     page = None
     FileDownloadDirectory = None
@@ -99,3 +100,11 @@ class navigator():
     def Dispose(self):
         if(self.__driver is not None):
             self.__driver.quit()
+
+    @property
+    def _GetConfigurationSettings(self):
+        return seleniumTestsConfigurationSection()
+
+    @property
+    def ScreenShotEnabled(self):
+        return self._GetConfigurationSettings.useSnapShot

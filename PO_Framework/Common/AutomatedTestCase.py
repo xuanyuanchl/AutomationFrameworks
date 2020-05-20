@@ -5,15 +5,14 @@ Created on May 10, 2020
 @author: O5LT
 '''
 import os
-
 from Common.DriverTestFixture import DriverTestFixture
-
+from GetConfiguration.SeleniumTestsConfigurationSection import seleniumTestsConfigurationSection
 
 class automatedTestCase(DriverTestFixture):
 
     def tearDown(self):
         for method_name, error in self._outcome.errors:
-            if (error):
+            if (error and self.ScreenShotEnabled):
                 case_name = self._testMethodName
                 imagesfolder = os.path.join(
                     os.getcwd(), "TestResults", "images")
@@ -29,5 +28,10 @@ class automatedTestCase(DriverTestFixture):
         self.navigat.Dispose()
         self._DriverInstance.quit()
 
+    @property
     def __GetConfigurationSettings(self):
-        return
+        return seleniumTestsConfigurationSection()
+
+    @property
+    def ScreenShotEnabled(self):
+        return self.__GetConfigurationSettings.useSnapShot

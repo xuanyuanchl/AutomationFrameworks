@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from selenium import webdriver
-from Configuration.SeleniumTestsConfigurationSection import seleniumTestsConfigurationSection
+from GetConfiguration.SeleniumTestsConfigurationSection import seleniumTestsConfigurationSection
 
 
 class webDriverFactory(object):

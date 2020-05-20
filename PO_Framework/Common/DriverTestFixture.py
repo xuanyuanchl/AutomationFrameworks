@@ -9,7 +9,7 @@ import time
 import unittest
 
 from Common.WebDriverFactory import webDriverFactory
-from Configuration.SeleniumTestsConfigurationSection import seleniumTestsConfigurationSection
+from GetConfiguration.SeleniumTestsConfigurationSection import seleniumTestsConfigurationSection
 from Navigate.Navigator import navigator
 from ProjectAutomated.Flows.EOLStartFlow import eolStartFlow
 

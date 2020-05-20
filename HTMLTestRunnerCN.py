@@ -160,9 +160,9 @@ class Template_mixin(object):
     2: '错误',
     }
  
-    DEFAULT_TITLE = '接口测试报告'
+    DEFAULT_TITLE = 'XX项目测试报告'
     DEFAULT_DESCRIPTION = ''
-    DEFAULT_TESTER = '天枢'
+    DEFAULT_TESTER = '陈海龙'
  
     # ------------------------------------------------------------------------
     # HTML Template
@@ -278,7 +278,7 @@ function html_escape(s) {
  
     STYLESHEET_TMPL = """
 <style type="text/css" media="screen">
-body        { font-family: Microsoft YaHei,Tahoma,arial,helvetica,sans-serif;padding: 20px; font-size: 80%; }
+body        { font-family: Microsoft YaHei,Tahoma,arial,helvetica,sans-serif;padding: 20px; font-size: 120%; }
 table       { font-size: 100%; }
 /* -- heading ---------------------------------------------------------------------- */
 .heading {

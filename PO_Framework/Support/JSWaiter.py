@@ -8,19 +8,19 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 class jsWaiter():
     SCRIPT = """var callback = arguments[arguments.length - 1];
-    var el = document.querySelector('div.ng-scope');
-    if (!window.angular) {
-        callback(false)
-    }
-    if (angular.getTestability) {
-        angular.getTestability(el).whenStable(function(){callback(true)});
-    } else {
-        if (!angular.element(el).injector()) {
-            callback(false)
-        }
-        var browser = angular.element(el).injector().get('$browser');
-        browser.notifyWhenNoOutstandingRequests(function(){callback(true)});
-    };"""
+                var el = document.querySelector('[ng-app]');
+                if (!window.angular) {
+                    callback(false)
+                }
+                if (angular.getTestability) {
+                    angular.getTestability(el).whenStable(function(){callback(true)});
+                } else {
+                    if (!angular.element(el).injector()) {
+                        callback(false)
+                    }
+                    var browser = angular.element(el).injector().get('$browser');
+                    browser.notifyWhenNoOutstandingRequests(function(){callback(true)});
+                };"""
 
     @classmethod
     def JSEval(cls, driver, script):
