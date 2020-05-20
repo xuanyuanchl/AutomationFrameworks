@@ -6,21 +6,20 @@ Created on May 10, 2020
 '''
 from selenium.webdriver.support.wait import WebDriverWait
 
-
 class jsWaiter():
     SCRIPT = """var callback = arguments[arguments.length - 1];
-    var el = document.querySelector('html');
+    var el = document.querySelector('div.ng-scope');
     if (!window.angular) {
-        callback('False')
+        callback(false)
     }
     if (angular.getTestability) {
-        angular.getTestability(el).whenStable(function(){callback('True')});
+        angular.getTestability(el).whenStable(function(){callback(true)});
     } else {
         if (!angular.element(el).injector()) {
-            callback('False')
+            callback(false)
         }
         var browser = angular.element(el).injector().get('$browser');
-        browser.notifyWhenNoOutstandingRequests(function(){callback('True')});
+        browser.notifyWhenNoOutstandingRequests(function(){callback(true)});
     };"""
 
     @classmethod
@@ -49,7 +48,7 @@ class jsWaiter():
     @classmethod
     def WaitForAngularJsFinished(cls, driver, timeout=10):
         waiter = WebDriverWait(driver, timeout)
-        waiter.until(cls.__AngularHasFinishedProcessing(driver))
+        waiter.until(lambda d: cls.__AngularHasFinishedProcessing(d))
 
     @classmethod
     def __AngularHasFinishedProcessing(self, driver):

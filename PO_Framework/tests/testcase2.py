@@ -15,5 +15,5 @@ class case2(automatedTestCase):
             loginPage).EnterCredentials('EOLZAA', 'Tint1n')
 
         login = start.Login()
-        self.assertEqual('hello', login.GetWelcomeLabelText,
+        self.assertEqual('Hello', login.GetWelcomeLabelText,
                          'In result 1 the label should be "Hello".')

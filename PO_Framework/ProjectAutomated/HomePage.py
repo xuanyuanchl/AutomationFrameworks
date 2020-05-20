@@ -17,3 +17,11 @@ class homePage(pageBase):
     @property
     def AccountsManagement(self):
         return link(self.webDriver, {By.ID: 'Menu_AccountsManagement'})
+
+    @property
+    def UserProfile(self):
+        return link(self.webDriver, {By.ID: 'Logged_Menu_User'})
+
+    @property
+    def OperatorTools(self):
+        return link(self.webDriver, {By.ID: 'Menu_OperatorTools'})

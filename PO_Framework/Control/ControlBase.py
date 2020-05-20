@@ -7,13 +7,10 @@ Created on May 9, 2020
 '''
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.remote.webelement import WebElement
-
 
 class controlBase():
     __driver: webdriver
     __selector = None
-    __wrappedElement: WebElement
     __actions = None
 
     def __init__(self, driver, selector: dict):
@@ -23,32 +20,33 @@ class controlBase():
         self.__driver = driver
         self.__selector = selector
 
+    @property
     def Selector(self):
         return self.__selector
 
+    @property
     def isVisible(self):
-        return self.__wrappedElement is not None and self.__wrappedElement.is_displayed()
+        return self.wrappedElement is not None and self.wrappedElement.is_displayed()
 
+    @property
     def isPresent(self):
-        return self.__wrappedElement is not None
+        return self.wrappedElement is not None
 
+    @property
     def isEnabled(self):
-        return self.__wrappedElement.is_enabled()
+        return self.wrappedElement.is_enabled()
 
     def getText(self):
-        return self.__wrappedElement.text
+        return self.wrappedElement.text
 
     @property
     def wrappedElement(self):
-
-        if(self.Selector() is None):
-            return None
-
         try:
-            locator = list(self.Selector().keys())[0]
-            objectstring = list(self.Selector().values())[0]
+            locator = list(self.Selector.keys())[0]
+            objectstring = list(self.Selector.values())[0]
             return self.webDriver.find_element(locator, objectstring)
         except Exception as e:
+            print (str(e))
             return None
 
     @property

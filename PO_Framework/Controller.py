@@ -8,7 +8,6 @@ Created on May 13, 2020
 import datetime
 import os
 import unittest
-
 import HTMLTestRunner
 
 
@@ -26,4 +25,5 @@ runner = HTMLTestRunner.HTMLTestRunner(
     title='EOL test',
     description='This demonstrates the report output by HTMLTestRunner.')
 runner.run(suite1)
+
 fp.close()

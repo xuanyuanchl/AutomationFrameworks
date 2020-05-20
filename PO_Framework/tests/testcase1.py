@@ -12,8 +12,13 @@ from ProjectAutomated.Pages.LoginPage import loginPage
 class case1(automatedTestCase):
     def test1(self):
         start = self.GetStart('').GoToLoginPage(
-            loginPage).EnterCredentials('EOLZAA', 'tint1n')
+            loginPage).EnterCredentials('monoAdmin', 'ordAdmin1Sel')
 
-        login = start.Login()
-        self.assertEqual('Hello', login.GetWelcomeLabelText,
-                         'In result 1 the label should be "Hello".')
+        login = start.Login().GoToUserProfileMenu()
+        self.assertFalse(login.IsOperator, 'In result 1, it should not be logined as operator.')
+
+        result = login.ViewYourProfileDetailsPage()
+        expectedResult = 'Mr. CustomerUserAdmin LastName'
+        self.assertEqual(expectedResult, result.Page.Name.wrappedElement.text,
+                         'In result 1, the name  "{0}" should be displayed.'.format(expectedResult))
+

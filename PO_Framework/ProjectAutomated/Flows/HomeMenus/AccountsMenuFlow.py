@@ -12,6 +12,8 @@ from Support.JSWaiter import jsWaiter
 
 
 class accountsMenuFlow(homePageFlow):
+    def __init__(self, navigator, accountsmenu):
+        homePageFlow.__init__(self, navigator, accountsmenu)
     def CreateNewUserBeta(self):
         createUserPage = self.Navigator.Navigate(
             createEditEOLUserPage, self.Page.CreateNewUserBeta.Click)

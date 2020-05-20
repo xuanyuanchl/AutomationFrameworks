@@ -6,9 +6,8 @@ Created on May 11, 2020
 @author: O5LT
 '''
 from ProjectAutomated.EOLFlow import eolFlow
-from ProjectAutomated.Flows.WelcomePageFlow import welcomePageFlow
 from ProjectAutomated.Pages.WelcomePage import welcomePage
-
+from ProjectAutomated.Flows.WelcomePageFlow import welcomePageFlow
 
 class loginPageFlow(eolFlow):
     def __init__(self, navigator, loginpage):
