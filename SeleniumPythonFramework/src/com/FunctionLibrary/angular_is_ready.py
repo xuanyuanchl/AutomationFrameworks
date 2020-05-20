@@ -4,7 +4,7 @@ class angular_is_ready(object):
     """taken from http://stackoverflow.com/a/33378576"""
     
     script = """var callback = arguments[arguments.length - 1];
-    var el = document.querySelector('html');
+    var el = document.querySelector('[ng-app]');
     if (!window.angular) {
         callback('False')
     }
