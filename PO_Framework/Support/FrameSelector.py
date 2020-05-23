@@ -8,6 +8,7 @@ Created on May 9, 2020
 
 
 class frameSelector():
+    """switch to different frame"""
     __driver = None
 
     def __init__(self, driver):

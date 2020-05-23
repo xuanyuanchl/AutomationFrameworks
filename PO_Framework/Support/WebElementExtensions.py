@@ -4,19 +4,27 @@ Created on May 10, 2020
 
 @author: O5LT
 '''
+
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException
 
 
 class webElementExtensions():
-    @classmethod
-    def FindElement(cls, driver, selector, timeoutInSeconds):
-        if(timeoutInSeconds > 0):
+
+    @staticmethod
+    def FindElement(driver, selector, timeoutInSeconds):
+        locator, objectstring = sorted(selector.items())[0]
+        if timeoutInSeconds > 0:
             waiter = WebDriverWait(driver, timeoutInSeconds)
-            locator = list(selector.keys())[0]
-            objectstring = list(selector.values())[0]
-            waiter.until(lambda d: d.find_element(locator, objectstring))
+            try:
+                waiter.until(lambda d: d.find_element(locator, objectstring))
+            except NoSuchElementException as e:
+                print('no such element.')
+            except TimeoutException as e:
+                print('find element timeout.')
         return driver.find_element(locator, objectstring)
 
-    @classmethod
-    def ScrollToView(cls, element, driver):
+    @staticmethod
+    def ScrollToView(element, driver):
         driver.execute_script("arguments[0].scrollIntoView(true);", element)

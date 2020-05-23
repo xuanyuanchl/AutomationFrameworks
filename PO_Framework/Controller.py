@@ -11,19 +11,30 @@ import unittest
 import HTMLTestRunner
 
 
-suite1 = unittest.defaultTestLoader.discover(
-    os.getcwd() + '/tests', pattern='testcase*.py')
+class contoller():
+    """
+    a controller to execute all test cases and generate html report
+    """
 
-currentTime = datetime.datetime.strftime(
-    datetime.datetime.now(), '%m%d_%H%M%S')
+    @property
+    def CurrentTime(self):
+        return datetime.datetime.strftime(
+            datetime.datetime.now(), '%m%d_%H%M%S')
 
-fp = open(os.getcwd() + "/TestResults/test_report_" +
-          currentTime + ".html", 'wb')
+    @property
+    def Suite(self):
+        return unittest.defaultTestLoader.discover(
+            os.getcwd() + '/tests', pattern='testcase*.py')
 
-runner = HTMLTestRunner.HTMLTestRunner(
-    stream=fp,
-    title='EOL test',
-    description='This demonstrates the report output by HTMLTestRunner.')
 
-runner.run(suite1)
-fp.close()
+if __name__ == '__main__':
+    executor = contoller()
+    with open(os.getcwd() + "/TestResults/test_report_" +
+              executor.CurrentTime + ".html", 'wb') as fp:
+        runner = HTMLTestRunner.HTMLTestRunner(
+            stream=fp,
+            verbosity=2,
+            title='EOL test',
+            description='This demonstrates the report output by HTMLTestRunner.',
+            tester='陈海龙')
+        runner.run(executor.Suite)

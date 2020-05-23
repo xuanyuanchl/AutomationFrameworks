@@ -7,6 +7,7 @@ Created on May 10, 2020
 
 
 class windowSelector():
+    """switch to different window"""
     __driver = None
     __originalWindowHandle = None
 

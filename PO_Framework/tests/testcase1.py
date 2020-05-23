@@ -15,7 +15,7 @@ class case1(automatedTestCase):
             loginPage).EnterCredentials('monoAdmin', 'ordAdmin1Sel')
 
         login = start.Login().GoToUserProfileMenu()
-        self.assertFalse(login.IsOperator, 'In result 1, it should not be logined as operator.')
+        self.assertFalse(login.IsOperator, 'In result 1, it should not be login as operator.')
 
         result = login.ViewYourProfileDetailsPage()
         expectedResult = 'Mr. CustomerUserAdmin LastName'

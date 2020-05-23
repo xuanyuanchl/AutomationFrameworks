@@ -4,6 +4,8 @@ from GetConfiguration.SeleniumTestsConfigurationSection import seleniumTestsConf
 
 
 class webDriverFactory(object):
+    """a factory to create different kind of web driver based on browser type"""
+
     @classmethod
     def create(cls):
         if(cls.GetBrowser().upper() == 'IE'):

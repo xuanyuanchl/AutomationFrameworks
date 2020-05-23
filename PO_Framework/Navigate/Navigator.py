@@ -20,6 +20,7 @@ class navigator():
     FileDownloadDirectory = None
 
     def Open(self, targetPage):
+        """open an target page"""
         target = targetPage()
         self.initPage(target)
         self.__driver.get(self.__siteUrl)
@@ -30,6 +31,7 @@ class navigator():
         return target
 
     def Start(self, siteUrl, webDriver):
+        """set site url and get web driver"""
         self.__siteUrl = siteUrl
         self.__driver = webDriver
 
@@ -37,9 +39,15 @@ class navigator():
         pagebase.webDriver = self.__driver
 
     def Navigate(self, targetPage, action=None):
+        """
+        execute an action like click one link to redirect to target page
+        :param targetPage: the page class name in ProjectAutomated.Pages
+        :param action: normally is click action
+        :return: the page instance, like welcomePage()
+        """
         target = targetPage()
         self.initPage(target)
-        if(action is not None):
+        if action is not None:
             action()
         self.__CheckPageCrashing()
         self.WaitForTargetPageLoad(target)
@@ -47,13 +55,13 @@ class navigator():
         return target
 
     def __CheckPageCrashing(self):
-        if("Server Error in '/' Application." in self.PageSource):
+        if "Server Error in '/' Application." in self.PageSource:
             self.AssertErrorMessage("Server Error in '/' Application.")
 
     def AssertErrorMessage(self, msg):
         if(self.ScreenShotEnabled):
             self.SaveScreenShot('error')
-        raise Exception(msg)
+        raise AssertionError(msg)
 
     def SaveScreenShot(self, fileName):
         if(self.__driver is None):
@@ -98,7 +106,7 @@ class navigator():
         __helper = None
 
     def Dispose(self):
-        if(self.__driver is not None):
+        if self.__driver is not None:
             self.__driver.quit()
 
     @property

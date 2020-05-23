@@ -10,6 +10,8 @@ import os
 
 
 class seleniumTestsConfigurationSection():
+    """this is to get selenium tests configuration value."""
+
     __sectionName = 'seleniumTests'
     __driver = 'driver'
     __seleniumTestsErrorsFolder = 'seleniumTestsErrorsFolder'

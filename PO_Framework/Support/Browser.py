@@ -8,10 +8,16 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 
 class browser():
+    """the action on browser, like back, forward, refresh"""
+
     __driver = None
 
     def __init__(self, driver):
         self.__driver = driver
+
+    @property
+    def ScriptExecutor(self):
+        return self.__driver
 
     def WindowMaximize(self):
         self.__driver.maximize_window()

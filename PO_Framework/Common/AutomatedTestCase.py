@@ -8,22 +8,23 @@ import os
 from Common.DriverTestFixture import DriverTestFixture
 from GetConfiguration.SeleniumTestsConfigurationSection import seleniumTestsConfigurationSection
 
+
 class automatedTestCase(DriverTestFixture):
 
     def tearDown(self):
         for method_name, error in self._outcome.errors:
-            if (error and self.ScreenShotEnabled):
+            if error:
+                print(str(method_name), str(error))
+            if self.ScreenShotEnabled:
                 case_name = self._testMethodName
                 imagesfolder = os.path.join(
-                    os.getcwd(), "TestResults", "images")
+                    os.getcwd(), "./TestResults", "images")
                 if not os.path.exists(imagesfolder):
                     os.makedirs(imagesfolder)
                 file_image_path = os.path.join(
-                    os.getcwd(), "TestResults", "images", case_name +
-                    "_" + self.timeStramp)
+                    os.getcwd(), "./TestResults", "images", case_name +
+                                                            "_" + self.timeStamp)
                 self.navigat.SaveScreenShot(file_image_path)
-                print('screenshot:', case_name +
-                      "_" + self.timeStramp + '.png')
 
         self.navigat.Dispose()
         self._DriverInstance.quit()

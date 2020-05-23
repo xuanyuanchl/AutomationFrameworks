@@ -4,11 +4,12 @@ Created on May 9, 2020
 
 @author: O5LT
 '''
-from Navigate.Navigator import navigator
+
 from PageBase.pageBase import pageBase
 
 
 class flowBase():
+    '''flow base class'''
     flowPage: pageBase
 
     def __init__(self, navigate):

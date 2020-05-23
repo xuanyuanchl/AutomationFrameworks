@@ -7,6 +7,8 @@ Created on May 10, 2020
 from selenium.webdriver.support.wait import WebDriverWait
 
 class jsWaiter():
+    """this class is to fix the page load issue like page has jquery, angular js request"""
+
     SCRIPT = """var callback = arguments[arguments.length - 1];
                 var el = document.querySelector('[ng-app]');
                 if (!window.angular) {

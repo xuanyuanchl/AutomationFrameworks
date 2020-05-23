@@ -29,17 +29,17 @@ class pageBase():
                 'return document.readyState')
             isPageReady = pageState is not None and pageState == 'complete'
         except Exception as e:
+            print(str(e))
             isPageReady = False
         return isPageReady
 
     def isPageLoaded(self):
         currentUrl = self.webDriver.current_url
-        if(currentUrl is None or currentUrl == ''):
+        if currentUrl is None or currentUrl == '':
             return False
         location = urlparse(currentUrl)
         path = location.path
         result = re.match(self._pageUrl, path)
-
         return result is not None and self.isReady()
 
     @property

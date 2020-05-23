@@ -8,6 +8,10 @@ from Control.ControlBase import controlBase
 
 
 class clickableUi(controlBase):
+    """
+    those web element which can be clicked can inherit this class,
+    like button, textfield, label, link and so on
+    """
     def Click(self, isUsingJS=False):
         if(isUsingJS):
             self.ClickUsingJavascript()
