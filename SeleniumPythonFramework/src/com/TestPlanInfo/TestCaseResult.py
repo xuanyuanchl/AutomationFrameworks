@@ -1,5 +1,5 @@
 
-from com.Utility.Tool import Tool
+from src.com.Utility.Tool import Tool
 
 class TestCaseResult(object):
     """description of class"""

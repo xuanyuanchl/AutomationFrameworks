@@ -1,8 +1,9 @@
-'''
+"""
 Created on Jan 19, 2020
 
 @author: O5LT
-'''
+"""
+
 import time
 
 from selenium import webdriver

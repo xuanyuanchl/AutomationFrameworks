@@ -2,11 +2,11 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 
-from com.Enumeration.StepResult import StepResult
-from com.FunctionLibrary.webdriverFractory import webdriverFactory
-from com.TestPlanInfo.TestStepResult import TestStepResult
-from com.TestSettings.Settings import Settings
-from com.Utility.Tool import Tool
+from src.com.Enumeration.StepResult import StepResult
+from src.com.FunctionLibrary.webdriverFractory import webdriverFactory
+from src.com.TestPlanInfo.TestStepResult import TestStepResult
+from src.com.TestSettings.Settings import Settings
+from src.com.Utility.Tool import Tool
 
 
 class LowLevelKeyword():

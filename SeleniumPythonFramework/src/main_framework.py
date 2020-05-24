@@ -1,19 +1,17 @@
-'''This is a circulator, run each test case in test plan, and generate html report'''
+"""This is a calculator, run each test case in test plan, and generate html report"""
 
 import logging
-# import os
-# import sys
 import traceback
 import unittest
 
-from MailSender.mail_sender import SendMail
-from ReportGenerate.StateReport import StateReport
-from ReportGenerate.SummaryReport import SummaryReport
-from ReportGenerate.SystemReport import SystemReport
-from com.FunctionLibrary.ExecuteFunction import ExecuteFunction
-from com.TestPlanInfo.TestStateResult import TestStateResult
-from com.TestSettings.Settings import Settings
-from com.Utility.Tool import Tool
+from src.MailSender.mail_sender import SendMail
+from src.ReportGenerate.StateReport import StateReport
+from src.ReportGenerate.SummaryReport import SummaryReport
+from src.ReportGenerate.SystemReport import SystemReport
+from src.com.FunctionLibrary.ExecuteFunction import ExecuteFunction
+from src.com.TestPlanInfo.TestStateResult import TestStateResult
+from src.com.TestSettings.Settings import Settings
+from src.com.Utility.Tool import Tool
 
 #
 # PROJECT = r'D:\GitGUI\SeleniumPythonFramework'  # 项目所在路径
@@ -86,8 +84,8 @@ class MainFramework(unittest.TestCase):
         MainFramework.settings.testPlanResult.setAllScenarioPassFailInfo()
         system_report.writeSystemInfo_toHtml()
         MainFramework.settings.testPlanResult.getModuleInfo()
-        summay_report = SummaryReport()
-        summay_report.writeModuleInfo_toHtml()
+        summary_report = SummaryReport()
+        summary_report.writeModuleInfo_toHtml()
         state_report = StateReport()
         state_report.CreateCaseSummaryInfoReport()
         state_report.CreateCaseStateInfoReport()

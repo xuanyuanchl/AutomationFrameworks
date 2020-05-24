@@ -1,5 +1,5 @@
 from collections import Counter
-from com.Utility.Tool import Tool
+from src.com.Utility.Tool import Tool
 
 class TestPlanResult(object):
     """description of class"""

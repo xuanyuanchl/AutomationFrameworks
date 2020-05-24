@@ -1,7 +1,7 @@
-from com.TestSettings.Settings import Settings
+from src.com.TestSettings.Settings import Settings
 import os
-from com.SummaryInfo.TestModuleInfo import TestModuleInfo
-from com.Utility.Tool import Tool
+from src.com.SummaryInfo.TestModuleInfo import TestModuleInfo
+from src.com.Utility.Tool import Tool
 
 class SummaryReport(object):
     """description of class"""

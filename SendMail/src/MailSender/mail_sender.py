@@ -7,7 +7,7 @@ from email.mime.text import MIMEText
 import os
 import smtplib
 import sys
-project = r'C:\Users\o5lt\eclipse-workspace\SendMail'  # 项目所在路径
+project = r'F:\Python_AutomationFrameworks\SendMail'  # 项目所在路径
 sys.path.append(os.getcwd().split(project)[0] + project)
 
 
@@ -79,7 +79,7 @@ if __name__ == '__main__':
     MAIL_PASS = "xxmyrwzexgiibdhb"  # 密码(这里的密码不是登录邮箱密码，而是授权码)
     CONTENT = 'Python Send Mail !'
     TITLE = 'Python SMTP Mail Test'  # 邮件主题
-    ATTACHMENT = r"D:\GitGUI\SeleniumPythonFramework\src\TestResult\0130_221636\Plan1\Plan1.html"
+    ATTACHMENT = r"F:\Python_AutomationFrameworks\PO_Framework\TestResults\test_report_0523_213007.html"
     SENDER = '616191459@qq.com'  # 发件人邮箱
     RECEIVERS = ['616191459@qq.com']  # 接收人邮箱
     S = SendMail(SENDER, RECEIVERS, [], MAIL_PASS, ATTACHMENT, TITLE, CONTENT)

@@ -1,9 +1,9 @@
 import os
 
-from ReportGenerate.DetailsInfoReport import DetailsInfoReport
-from com.TestPlanInfo.TestCaseResult import TestCaseResult
-from com.TestSettings.Settings import Settings
-from com.Utility.Tool import Tool
+from src.ReportGenerate.DetailsInfoReport import DetailsInfoReport
+from src.com.TestPlanInfo.TestCaseResult import TestCaseResult
+from src.com.TestSettings.Settings import Settings
+from src.com.Utility.Tool import Tool
 
 
 class StateReport(object):

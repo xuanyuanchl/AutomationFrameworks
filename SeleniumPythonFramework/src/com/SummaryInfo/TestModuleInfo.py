@@ -1,4 +1,4 @@
-from com.TestSettings.Settings import Settings
+from src.com.TestSettings.Settings import Settings
 
 class TestModuleInfo(object):
     """description of class"""

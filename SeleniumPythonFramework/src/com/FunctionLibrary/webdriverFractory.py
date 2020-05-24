@@ -6,19 +6,19 @@ class webdriverFactory(object):
     """create a driver"""
 
     script = """var callback = arguments[arguments.length - 1];
-    var el = document.querySelector('ng-app');
-    if (!window.angular) {
-        callback('False')
-    }
-    if (angular.getTestability) {
-        angular.getTestability(el).whenStable(function(){callback('True')});
-    } else {
-        if (!angular.element(el).injector()) {
-            callback('False')
-        }
-        var browser = angular.element(el).injector().get('$browser');
-        browser.notifyWhenNoOutstandingRequests(function(){callback('True')});
-    };"""
+                var el = document.querySelector('[ng-app]');
+                if (!window.angular) {
+                    callback(false)
+                }
+                if (angular.getTestability) {
+                    angular.getTestability(el).whenStable(function(){callback(true)});
+                } else {
+                    if (!angular.element(el).injector()) {
+                        callback(false)
+                    }
+                    var browser = angular.element(el).injector().get('$browser');
+                    browser.notifyWhenNoOutstandingRequests(function(){callback(true)});
+                };"""
 
     def __init__(self):
         pass
@@ -44,4 +44,4 @@ class webdriverFactory(object):
         # wait jQuery ready
         wdw.until(lambda x: driver.execute_script('return jQuery.active == 0'))
         # wait agularJs processed
-        webdriverFactory.is_Angular_Ready(driver)
+        #webdriverFactory.is_Angular_Ready(driver)

@@ -6,7 +6,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import os
 import smtplib
-from com.Utility.Tool import jsonParse
+from src.com.Utility.Tool import jsonParse
 
 
 class SendMail:

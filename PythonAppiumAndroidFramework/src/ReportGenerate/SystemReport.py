@@ -1,6 +1,6 @@
-from com.TestSettings.Settings import Settings
+from src.com.TestSettings.Settings import Settings
 import os
-from com.Utility.Tool import Tool
+from src.com.Utility.Tool import Tool
 
 class SystemReport(object):
     """description of class"""

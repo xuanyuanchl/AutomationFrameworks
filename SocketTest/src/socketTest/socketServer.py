@@ -82,7 +82,7 @@ def run():
             except ConnectionResetError:
                 break
         conn.close()
-    phone.close()
+        phone.close()
 
 
 if __name__ == '__main__':

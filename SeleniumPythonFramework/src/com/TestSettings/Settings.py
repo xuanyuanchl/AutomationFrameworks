@@ -5,10 +5,10 @@ from openpyxl import load_workbook
 from openpyxl.workbook.workbook import Workbook
 from openpyxl.workbook.workbook import Worksheet
 
-from com.FunctionLibrary.webdriverFractory import webdriverFactory
-from com.TestPlanInfo.TestCaseResult import TestCaseResult
-from com.TestPlanInfo.TestPlanResult import TestPlanResult
-from com.Utility.Tool import Tool
+from src.com.FunctionLibrary.webdriverFractory import webdriverFactory
+from src.com.TestPlanInfo.TestCaseResult import TestCaseResult
+from src.com.TestPlanInfo.TestPlanResult import TestPlanResult
+from src.com.Utility.Tool import Tool
 
 
 class Settings(object):

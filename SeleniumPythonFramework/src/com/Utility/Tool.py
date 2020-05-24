@@ -23,23 +23,23 @@ class Tool(object):
 
     @staticmethod
     def readFile(fileName):
-        with open(fileName, 'r') as fb:
+        with open(fileName, 'r', encoding='UTF-8') as fb:
             content = fb.read()
             return content
 
     @staticmethod
     def writeFile(fileName, text):
-        with open(fileName, 'w') as fb:
+        with open(fileName, 'w', encoding='UTF-8') as fb:
             fb.write(text)
 
     @staticmethod
     def appendFile(fileName, text):
-        with open(fileName, 'a') as fb:
+        with open(fileName, 'a', encoding='UTF-8') as fb:
             fb.write(text)
 
     @staticmethod
     def createFile(fiename):
-        with open(fiename, 'w'):
+        with open(fiename, 'w', encoding='UTF-8'):
             '''create a file'''
 
     @staticmethod

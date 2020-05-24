@@ -1,7 +1,7 @@
 import os
 
-from com.TestSettings.Settings import Settings
-from com.Utility.Tool import Tool
+from src.com.TestSettings.Settings import Settings
+from src.com.Utility.Tool import Tool
 
 
 class SystemReport(object):

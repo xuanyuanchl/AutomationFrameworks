@@ -1,8 +1,8 @@
 import os
 
-from com.Enumeration.StepResult import StepResult
-from com.TestSettings.Settings import Settings
-from com.Utility.Tool import Tool
+from src.com.Enumeration.StepResult import StepResult
+from src.com.TestSettings.Settings import Settings
+from src.com.Utility.Tool import Tool
 
 
 class DetailsInfoReport(object):

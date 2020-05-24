@@ -21,7 +21,7 @@ class jsonParse(object):
         return json.dumps(data)
     
     @staticmethod
-    def cmp_dict(src_data,dst_data):   
+    def cmp_dict(src_data, dst_data):
         assert type(src_data) == type(dst_data),"type: '{}' != '{}'".format(type(src_data), type(dst_data))
         if isinstance(src_data,dict):
             assert len(src_data) == len(dst_data),"dict len: '{}' != '{}'".format(len(src_data), len(dst_data))

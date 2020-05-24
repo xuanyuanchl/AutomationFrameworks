@@ -1,8 +1,8 @@
 from com.TestSettings.Settings import Settings
 import os
-from com.TestPlanInfo.TestCaseResult import TestCaseResult
-from com.Utility.Tool import Tool
-from ReportGenerate.DetailsInfoReport import DetailsInfoReport
+from src.com.TestPlanInfo.TestCaseResult import TestCaseResult
+from src.com.Utility.Tool import Tool
+from src.ReportGenerate.DetailsInfoReport import DetailsInfoReport
 
 class StateReport(object):
     """description of class"""

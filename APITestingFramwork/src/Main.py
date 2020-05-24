@@ -8,8 +8,8 @@ import HTMLTestRunner
 import os
 import datetime
 suite1 = unittest.defaultTestLoader.discover(os.getcwd() + '/TestCases', pattern='test*.py')
-currentTime = datetime.datetime.strftime(datetime.datetime.now(),'%m%d_%H%M%S')
-fp = open(os.getcwd() + "/TestResult/test_report_" + currentTime + ".html", 'w+')
+currentTime = datetime.datetime.strftime(datetime.datetime.now(), '%m%d_%H%M%S')
+fp = open(os.getcwd() + "/TestResult/test_report_" + currentTime + ".html", 'wb')
 runner = HTMLTestRunner.HTMLTestRunner(
             stream=fp,
             title='My API test',

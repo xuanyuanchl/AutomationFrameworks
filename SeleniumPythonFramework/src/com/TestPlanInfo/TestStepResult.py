@@ -1,4 +1,4 @@
-from com.Enumeration.StepResult import StepResult
+from src.com.Enumeration.StepResult import StepResult
 
 class TestStepResult(object):
     """description of class"""
