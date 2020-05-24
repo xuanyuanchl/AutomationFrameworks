@@ -18,11 +18,11 @@ class webDriverExtensions():
         if timeoutInSeconds > 0:
             waiter = WebDriverWait(driver, timeoutInSeconds)
             try:
-                waiter.until(lambda d: d.find_element(locator, objectstring))
+                return waiter.until(lambda d: d.find_element(locator, objectstring))
             except NoSuchElementException as e:
-                print('no such element.')
+                print('No such web element')
             except TimeoutException as e:
-                print('find element timeout.')
+                print('Cannot find web element')
         return driver.find_element(locator, objectstring)
 
     @staticmethod

@@ -24,16 +24,21 @@ class contoller():
     @property
     def Suite(self):
         return unittest.defaultTestLoader.discover(
-            os.getcwd() + '/tests', pattern='testcase*.py')
+            os.getcwd() + '/tests', pattern='testcase1.py')
 
 
 if __name__ == '__main__':
     executor = contoller()
-    with open(os.getcwd() + "/TestResults/test_report_" +
+    testResultsFolder = os.path.join(
+                    os.getcwd(), "./TestResults")
+    if not os.path.exists(testResultsFolder):
+                    os.makedirs(testResultsFolder)
+
+    with open(testResultsFolder + "/test_report_" +
               executor.CurrentTime + ".html", 'wb') as fp:
         runner = HTMLTestRunner.HTMLTestRunner(
             stream=fp,
-            verbosity=2,
+            verbosity=1,
             title='EOL test',
             description='This demonstrates the report output by HTMLTestRunner.',
             tester='陈海龙')

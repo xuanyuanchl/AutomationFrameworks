@@ -84,14 +84,9 @@ class controlBase():
         if self.__selector is None:
             print('do we need to specify the selector?')
             return None
-        try:
-            return webDriverExtensions.FindElement(self.webDriver, self.Selector, 5)
-        except NoSuchElementException as e:
-            print(str(e))
-            return None
-        except TimeoutException as e:
-            print(str(e))
-            return None
+
+        return webDriverExtensions.FindElement(self.webDriver, self.Selector, 5)
+
 
     @property
     def webDriver(self):

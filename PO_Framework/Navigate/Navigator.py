@@ -15,7 +15,7 @@ class navigator():
     __driver = None
     __siteUrl = None
     __helper = None
-    PageLoadTimeout = 10
+    PageLoadTimeout = None
     page = None
     FileDownloadDirectory = None
 
@@ -84,7 +84,8 @@ class navigator():
     def WaitForTargetPageLoad(self, targetPage):
         waiter = WebDriverWait(self.__driver, self.PageLoadTimeout)
         waiter.until(
-            lambda driver: self.CompareCurrentPageUrlToTarget(targetPage))
+            lambda driver: self.CompareCurrentPageUrlToTarget(targetPage),
+            '{0} is not loaded correctly'.format(targetPage.__class__.__name__))
 
     def WaitForCondition(self, condition, timeout):
         '''condition can be lambda expression or any judgment statement
