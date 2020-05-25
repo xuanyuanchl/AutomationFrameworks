@@ -6,7 +6,7 @@ Created on May 9, 2020
 '''
 
 from selenium.webdriver.support.wait import WebDriverWait
-
+from PIL import ImageGrab
 from GetConfiguration.SeleniumTestsConfigurationSection import seleniumTestsConfigurationSection
 from Support.Helper import helper
 
@@ -67,7 +67,7 @@ class navigator():
         if(self.__driver is None):
             return None
         fileName = fileName + '.png'
-        self.__driver.save_screenshot(fileName)
+        self.SaveImage(fileName)
 
     def CompareCurrentPageUrlToTarget(self, targetPage):
         allHandles = self.__driver.window_handles
@@ -117,3 +117,7 @@ class navigator():
     @property
     def ScreenShotEnabled(self):
         return self._GetConfigurationSettings.useSnapShot
+
+    def SaveImage(self, filename):
+        imagegrab = ImageGrab.grab()
+        imagegrab.save(filename)

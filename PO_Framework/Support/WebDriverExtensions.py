@@ -22,7 +22,7 @@ class webDriverExtensions():
             except NoSuchElementException as e:
                 print('No such web element')
             except TimeoutException as e:
-                print('Cannot find web element')
+                print(f'Cannot find web element in {timeoutInSeconds} seconds')
         return driver.find_element(locator, objectstring)
 
     @staticmethod
