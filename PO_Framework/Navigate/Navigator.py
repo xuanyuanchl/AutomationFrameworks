@@ -67,7 +67,10 @@ class navigator():
         if(self.__driver is None):
             return None
         fileName = fileName + '.png'
-        self.SaveImage(fileName)
+        try:
+            self.__driver.save_screenshot(fileName)
+        except Exception:
+            self.SaveImage(fileName)
 
     def CompareCurrentPageUrlToTarget(self, targetPage):
         allHandles = self.__driver.window_handles
