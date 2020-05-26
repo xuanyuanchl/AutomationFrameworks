@@ -24,7 +24,7 @@ class contoller():
     @property
     def Suite(self):
         return unittest.defaultTestLoader.discover(
-            os.getcwd() + '/tests', pattern='testcase1.py')
+            os.getcwd() + '/tests', pattern='testcase*.py')
 
 
 if __name__ == '__main__':
@@ -38,7 +38,7 @@ if __name__ == '__main__':
               executor.CurrentTime + ".html", 'wb') as fp:
         runner = HTMLTestRunner.HTMLTestRunner(
             stream=fp,
-            verbosity=1,
+            verbosity=2,
             title='EOL test',
             description='This demonstrates the report output by HTMLTestRunner.',
             tester='陈海龙')

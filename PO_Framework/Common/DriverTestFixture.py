@@ -58,4 +58,5 @@ class DriverTestFixture(unittest.TestCase):
 
     def tearDown(self):
         self.navigat.Dispose()
-        self._DriverInstance.quit()
+        if self._DriverInstance is not None:
+            self._DriverInstance.quit()

@@ -13,7 +13,7 @@ from PageBase.pageBase import pageBase
 
 class loginPage(pageBase):
     def __init__(self):
-        super().__init__('^/$')
+        super().__init__('^/logon$')
 
     @property
     def UserName(self):

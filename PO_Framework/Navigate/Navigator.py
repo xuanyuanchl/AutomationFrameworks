@@ -64,12 +64,19 @@ class navigator():
         raise AssertionError(msg)
 
     def SaveScreenShot(self, fileName):
-        if(self.__driver is None):
+        """
+        usually, we use web driver to save screen shot, if any exception when call save_screenshot
+        it will use SaveImage to save current full screen
+        :param fileName: The full path you wish to save your screenshot to. This
+           should end with a `.png` extension.
+        :return: True/False
+        """
+        if self.__driver is None:
             return None
         fileName = fileName + '.png'
         try:
             self.__driver.save_screenshot(fileName)
-        except Exception:
+        except Exception as e:
             self.SaveImage(fileName)
 
     def CompareCurrentPageUrlToTarget(self, targetPage):
@@ -98,7 +105,7 @@ class navigator():
 
     @property
     def Helper(self):
-        if (self.__helper is None):
+        if self.__helper is None:
             self.__helper = helper(self.__driver)
         return self.__helper
 

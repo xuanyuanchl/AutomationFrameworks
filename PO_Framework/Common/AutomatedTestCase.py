@@ -32,7 +32,8 @@ class automatedTestCase(DriverTestFixture):
                 break
 
         self.navigat.Dispose()
-        self._DriverInstance.quit()
+        if self._DriverInstance is not None:
+            self._DriverInstance.quit()
 
     @property
     def __GetConfigurationSettings(self):
