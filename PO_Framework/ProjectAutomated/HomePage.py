@@ -5,6 +5,7 @@ Created on May 10, 2020
 @author: O5LT
 '''
 from selenium.webdriver.common.by import By
+from Support.WebDriverExtensions import webDriverExtensions
 
 from Control.Link import link
 from PageBase.pageBase import pageBase
@@ -24,4 +25,27 @@ class homePage(pageBase):
 
     @property
     def OperatorTools(self):
+        # 1
         return link(self.webDriver, {By.ID: 'Menu_OperatorTools'})
+
+        # 2
+        # elements = self.webDriver.find_elements(By.ID, 'Menu_OperatorTools')
+        # if elements is None:
+        #     return link(self.webDriver, None, None)
+        # else:
+        #     for element in elements:
+        #         if element.is_displayed():
+        #             return link(self.webDriver, None, element)
+
+        # 3
+        # elements = webDriverExtensions.FindElements(self.webDriver, {By.ID: 'Menu_OperatorTools'}, 10)
+        # if elements is None:
+        #     return link(self.webDriver, None, None)
+        # else:
+        #     for element in elements:
+        #         if element.is_displayed():
+        #             return link(self.webDriver, None, element)
+
+        # 4
+        # element = webDriverExtensions.FindElement(self.webDriver, {By.ID: 'Menu_OperatorTools'}, 10)
+        # return link(self.webDriver, None, element)

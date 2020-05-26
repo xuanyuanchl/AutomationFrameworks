@@ -8,8 +8,6 @@ Created on May 9, 2020
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from Support.WebDriverExtensions import webDriverExtensions
-from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import TimeoutException
 from Support.Helper import helper
 
 
@@ -18,8 +16,9 @@ class controlBase():
     __driver: webdriver
     __selector = None
     __actions = None
+    __wrappedElement = None
 
-    def __init__(self, driver, selector: dict):
+    def __init__(self, driver, selector: dict = None, element=None):
         """
         :param driver: webdriver
         :param selector: selector contains locator and value like:
@@ -27,6 +26,7 @@ class controlBase():
         {by.xpath: xpath1}"""
         self.__driver = driver
         self.__selector = selector
+        self.__wrappedElement = element
 
     @property
     def Selector(self) -> dict:
@@ -81,12 +81,13 @@ class controlBase():
         get the web element
         :return: webelement or None
         """
+        if self.__wrappedElement is not None:
+            return self.__wrappedElement
         if self.__selector is None:
-            print('do we need to specify the selector?')
+            # print('do we need to specify the selector?')
             return None
 
         return webDriverExtensions.FindElement(self.webDriver, self.Selector, 5)
-
 
     @property
     def webDriver(self):
