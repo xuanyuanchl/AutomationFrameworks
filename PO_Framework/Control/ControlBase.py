@@ -81,13 +81,17 @@ class controlBase:
         get the web element
         :return: web element or None
         """
+        # style_yellow = 'arguments[0].style.border="5px solid yellow"'
         if self.__wrappedElement is not None:
+            # self.__driver.execute_script(style_yellow, self.__wrappedElement)
             return self.__wrappedElement
         if self.__selector is None:
             # print('do we need to specify the selector?')
             return None
 
-        return webDriverExtensions.FindElement(self.webDriver, self.Selector, 5)
+        self.__wrappedElement = webDriverExtensions.FindElement(self.webDriver, self.Selector, 5)
+        # self.__driver.execute_script(style_yellow, self.__wrappedElement)
+        return self.__wrappedElement
 
     @property
     def webDriver(self):
