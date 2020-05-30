@@ -1,0 +1,8 @@
+{
+	"SMTPAuthenticationCode": "xxmyrwzexgiibdhb",
+	"sender": "616191459@qq.com",
+	"receivers": ["ivanchen@eurofins.com"],
+	"cclist": [],
+	"content" : "This is html summary report!",
+    "title" : "EOL test"
+}
