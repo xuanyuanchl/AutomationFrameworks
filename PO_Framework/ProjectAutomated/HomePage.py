@@ -9,42 +9,34 @@ from Support.WebDriverExtensions import webDriverExtensions
 
 from Control.Link import link
 from PageBase.pageBase import pageBase
-
+from asq import query
 
 class homePage(pageBase):
     def __init__(self, pageUrl):
         super().__init__(pageUrl)
 
     @property
-    def AccountsManagement(self):
+    def AccountsManagement(self) -> link:
         return link(self.webDriver, {By.ID: 'Menu_AccountsManagement'})
 
     @property
-    def UserProfile(self):
+    def UserProfile(self) -> link:
         return link(self.webDriver, {By.ID: 'Logged_Menu_User'})
 
     @property
-    def OperatorTools(self):
+    def OperatorTools(self) -> link:
         # 1
-        return link(self.webDriver, {By.ID: 'Menu_OperatorTools'})
+        # return link(self.webDriver, {By.ID: 'Menu_OperatorTools'})
 
         # 2
-        # elements = self.webDriver.find_elements(By.ID, 'Menu_OperatorTools')
-        # if elements is None:
-        #     return link(self.webDriver, None, None)
-        # else:
-        #     for element in elements:
-        #         if element.is_displayed():
-        #             return link(self.webDriver, None, element)
+        elements = self.webDriver.find_elements(By.ID, 'Menu_OperatorTools')
+        element = query(elements).first_or_default(None, lambda e: e.is_displayed())
+        return link(self.webDriver, None, element)
 
         # 3
         # elements = webDriverExtensions.FindElements(self.webDriver, {By.ID: 'Menu_OperatorTools'}, 10)
-        # if elements is None:
-        #     return link(self.webDriver, None, None)
-        # else:
-        #     for element in elements:
-        #         if element.is_displayed():
-        #             return link(self.webDriver, None, element)
+        # element = query(elements).first_or_default(None, lambda e: e.is_displayed())
+        # return link(self.webDriver, None, element)
 
         # 4
         # element = webDriverExtensions.FindElement(self.webDriver, {By.ID: 'Menu_OperatorTools'}, 10)

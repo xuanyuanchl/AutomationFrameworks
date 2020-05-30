@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Created on Apr 29, 2020
 
 @author: O5LT
-'''
+"""
 import re
 from urllib.parse import urlparse
 
 
-class pageBase():
+class pageBase:
     _pageUrl = None
     webDriver = None
 

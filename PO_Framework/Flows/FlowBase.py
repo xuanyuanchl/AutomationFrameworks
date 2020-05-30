@@ -8,7 +8,7 @@ Created on May 9, 2020
 from PageBase.pageBase import pageBase
 
 
-class flowBase():
+class flowBase:
     '''flow base class'''
     flowPage: pageBase
 

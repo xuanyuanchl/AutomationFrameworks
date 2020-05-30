@@ -6,7 +6,7 @@ Created on May 10, 2020
 '''
 
 
-class Browser():
+class Browser:
     IE = 1
     Chrome = 2
     Firefox = 3

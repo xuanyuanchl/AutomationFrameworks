@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Created on May 10, 2020
 
 @author: O5LT
-'''
+"""
 
 from Common.AutomatedTestCase import automatedTestCase
 from ProjectAutomated.Pages.LoginPage import loginPage
@@ -20,5 +20,5 @@ class case1(automatedTestCase):
         result = login.ViewYourProfileDetailsPage()
         expectedResult = 'Mr. CustomerUserAdmin LastName'
         self.assertEqual(expectedResult, result.Page.Name.wrappedElement.text,
-                         'In result 1, the name  "{0}" should be displayed.'.format(expectedResult))
+                         f'In result 1, the name  "{expectedResult}" should be displayed.')
 

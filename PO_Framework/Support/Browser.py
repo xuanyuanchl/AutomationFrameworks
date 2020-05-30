@@ -1,13 +1,14 @@
-'''
+"""
 Created on May 9, 2020
 
 @author: O5LT
-'''
+"""
 import time
 from selenium.webdriver.common.action_chains import ActionChains
+from Support.Alert import alert
 
 
-class browser():
+class browser:
     """the action on browser, like back, forward, refresh"""
 
     __driver = None
@@ -52,3 +53,6 @@ class browser():
         time.sleep(5)
         self.__driver.close()
         time.sleep(5)
+
+    def Alert(self):
+        return alert(self.__driver)

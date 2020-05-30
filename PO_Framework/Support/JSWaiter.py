@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Created on May 10, 2020
 
 @author: O5LT
-'''
+"""
 from selenium.webdriver.support.wait import WebDriverWait
 
-class jsWaiter():
+class jsWaiter:
     """this class is to fix the page load issue like page has jquery, angular js request"""
 
     SCRIPT = """var callback = arguments[arguments.length - 1];

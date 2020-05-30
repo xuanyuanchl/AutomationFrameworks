@@ -11,7 +11,7 @@ class webDriverFactory(object):
         if cls.GetBrowser().upper() == 'IE':
             wdriver: webdriver = webdriver.Ie()
         elif cls.GetBrowser().upper() == 'CHROME':
-            wdriver: webdriver = webdriver.Chrome(executable_path=r'F:\Python_AutomationFrameworks\chromedriver.exe')
+            wdriver: webdriver = webdriver.Chrome()
         elif cls.GetBrowser().upper() == 'FIREFOX':
             wdriver: webdriver = webdriver.Firefox()
         else:

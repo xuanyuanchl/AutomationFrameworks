@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
-'''
+"""
 Created on May 9, 2020
 
 @author: O5LT
-'''
+"""
 
 
-class frameSelector():
+class frameSelector:
     """switch to different frame"""
     __driver = None
 

@@ -11,7 +11,7 @@ from Support.WebDriverExtensions import webDriverExtensions
 from Support.Helper import helper
 
 
-class controlBase():
+class controlBase:
     """web control base class"""
     __driver: webdriver
     __selector = None
@@ -79,7 +79,7 @@ class controlBase():
     def wrappedElement(self):
         """
         get the web element
-        :return: webelement or None
+        :return: web element or None
         """
         if self.__wrappedElement is not None:
             return self.__wrappedElement
@@ -93,7 +93,7 @@ class controlBase():
     def webDriver(self):
         """
         get web driver
-        :rtype: webdriver
+        :rtype: web driver
         """
         return self.__driver
 
@@ -114,8 +114,6 @@ class controlBase():
         """
             Moving the mouse to the middle of an element.
 
-            :Args:
-             - to_element: The WebElement to move to.
         """
         self._helper.Browser.Actions.move_to_element(self.wrappedElement).perform()
 
@@ -124,11 +122,10 @@ class controlBase():
 
     def DragAndDrop(self, targetElement):
         """
-            Holds down the left mouse button on the source element,
+            Holds down the left mouse button on the source element (self.wrappedElement),
                then moves to the target element and releases the mouse button.
 
             :Args:
-             - source: The element to mouse down.
-             - target: The element to mouse up.
+             - targetElement: The element to mouse up.
         """
         self._helper.Browser.Actions.drag_and_drop(self.wrappedElement, targetElement).perform()

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Created on May 10, 2020
 
 @author: O5LT
-'''
+"""
 
 from Common.AutomatedTestCase import automatedTestCase
 from ProjectAutomated.Pages.LoginPage import loginPage

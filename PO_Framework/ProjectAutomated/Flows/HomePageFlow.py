@@ -17,5 +17,5 @@ class homePageFlow(eolFlow):
         return userProfileMenuFlow(self.Navigator, userprofileMenu)
 
     @property
-    def IsOperator(self):
-        return self.Page.OperatorTools.isPresent;
+    def IsOperator(self) -> bool:
+        return self.Page.OperatorTools.isPresent

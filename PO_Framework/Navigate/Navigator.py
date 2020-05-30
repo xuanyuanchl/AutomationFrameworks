@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Created on May 9, 2020
 
 @author: O5LT
-'''
+"""
 
 from selenium.webdriver.support.wait import WebDriverWait
 from PIL import ImageGrab
@@ -11,7 +11,7 @@ from GetConfiguration.SeleniumTestsConfigurationSection import seleniumTestsConf
 from Support.Helper import helper
 
 
-class navigator():
+class navigator:
     __driver = None
     __siteUrl = None
     __helper = None

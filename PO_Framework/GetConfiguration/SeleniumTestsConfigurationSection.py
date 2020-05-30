@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Created on May 13, 2020
 
 @author: O5LT
-'''
+"""
 
 import configparser
 import os

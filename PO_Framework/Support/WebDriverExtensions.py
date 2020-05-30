@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Created on May 10, 2020
 
 @author: O5LT
-'''
+"""
 
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common.exceptions import TimeoutException
 
-class webDriverExtensions():
+class webDriverExtensions:
 
     @staticmethod
     def FindElement(driver, selector, timeoutInSeconds):

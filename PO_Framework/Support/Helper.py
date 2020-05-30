@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Created on May 9, 2020
 
 @author: O5LT
-'''
+"""
 
 from Support.Browser import browser
 from Support.FrameSelector import frameSelector
 from Support.WindowSelector import windowSelector
 
 
-class helper():
+class helper:
     __browser: browser
     __driver = None
     __frameSelector = None
