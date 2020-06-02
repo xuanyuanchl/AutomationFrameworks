@@ -5,7 +5,6 @@ Created on May 10, 2020
 @author: O5LT
 '''
 from selenium.webdriver.common.by import By
-from Support.WebDriverExtensions import webDriverExtensions
 
 from Control.Link import link
 from PageBase.pageBase import pageBase

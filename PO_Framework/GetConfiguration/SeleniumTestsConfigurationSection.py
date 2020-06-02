@@ -21,6 +21,7 @@ class seleniumTestsConfigurationSection():
     __serverUrl = 'serverUrl'
     __defaultSnapShotSaveDirectory = 'defaultSnapShotSaveDirectory'
     __configParser = None
+    __eurodatConnnectionString = 'eurodatConnnectionString'
 
     def __init__(self):
         self.__configParser = configparser.ConfigParser()
@@ -55,3 +56,7 @@ class seleniumTestsConfigurationSection():
     @property
     def defaultSnapShotSaveDirectory(self):
         return self.__configParser.get(self.__sectionName, self.__defaultSnapShotSaveDirectory)
+
+    @property
+    def eurodatConnnectionString(self):
+        return self.__configParser.get(self.__sectionName, self.__eurodatConnnectionString)
