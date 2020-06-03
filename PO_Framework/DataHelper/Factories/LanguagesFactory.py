@@ -1,10 +1,9 @@
-
 from DataHelper.Models.Languages import Languages
 from DataHelper.EOLDBAccess import dbAccess
 
+
 def Create(languageIncId, languageSqlId, languageCode,
            languageName, isDeleted, isSupported, isoLanguageCode, translationTag):
-
     languages = Languages()
 
     languages.languageIncId = languageIncId
