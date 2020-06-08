@@ -42,7 +42,6 @@ class controlFinder:
         framework_id 具有此框架ID的元素（用于UIAutomation元素）
 
         :param backend: win32 or uia or None, 搜索时使用的后端名称（默认=None表示当前活动后端）
-        :param timeout: connect app within (timeout) seconds
         :param kwargs: use the above value, like "title = 'your title', class_name = 'your class name'"
         :return:  WindowSpecification
         """
@@ -84,7 +83,9 @@ class controlFinder:
             ‘enabled’ means that the window is not disabled
             ‘ready’ means that the window is visible and enabled
             ‘active’ means that the window is active
-        :param timeout: if the window is not in the appropriate state after this number of seconds. Default: pywinauto.timings.Timings.window_find_timeout = 5.
-        :param retry_interval: How long to sleep between each retry. Default: pywinauto.timings.Timings.window_find_retry = 0.09
+        :param timeout: if the window is not in the appropriate state after this number of seconds.
+        Default: pywinauto.timings.Timings.window_find_timeout = 5.
+        :param retry_interval: How long to sleep between each retry.
+        Default: pywinauto.timings.Timings.window_find_retry = 0.09
         """
         e.wait(wait_for, timeout, retry_interval)

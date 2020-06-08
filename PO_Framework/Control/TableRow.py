@@ -16,7 +16,7 @@ class tableRow:
     _nestedTableCount: None
     _headCount: None
 
-    def __init__ (self, row):
+    def __init__(self, row):
         self._row = row
         self._tableCells = row.find_elements(By.XPATH, './td|./th')
         self._nestedTableCount = row.find_elements(By.TAG_NAME, 'table')

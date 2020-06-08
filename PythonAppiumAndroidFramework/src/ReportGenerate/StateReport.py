@@ -1,4 +1,4 @@
-from com.TestSettings.Settings import Settings
+from src.com.TestSettings.Settings import Settings
 import os
 from src.com.TestPlanInfo.TestCaseResult import TestCaseResult
 from src.com.Utility.Tool import Tool

@@ -2,13 +2,13 @@ import logging
 import traceback
 import unittest
 
-from ReportGenerate.StateReport import StateReport
-from ReportGenerate.SummaryReport import SummaryReport
-from ReportGenerate.SystemReport import SystemReport
-from com.FunctionLibrary.ExecuteFunction import ExecuteFunction
-from com.TestPlanInfo.TestStateResult import TestStateResult
-from com.TestSettings.Settings import Settings
-from com.Utility.Tool import Tool
+from src.ReportGenerate.StateReport import StateReport
+from src.ReportGenerate.SummaryReport import SummaryReport
+from src.ReportGenerate.SystemReport import SystemReport
+from src.com.FunctionLibrary.ExecuteFunction import ExecuteFunction
+from src.com.TestPlanInfo.TestStateResult import TestStateResult
+from src.com.TestSettings.Settings import Settings
+from src.com.Utility.Tool import Tool
 
 
 class MainFramework(unittest.TestCase):

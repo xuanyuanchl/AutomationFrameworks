@@ -30,12 +30,12 @@ class saveAsDialogWindow(controlBase):
 
     @property
     def SaveButton(self):
-        e = self.Element.child_window(title='&Save', class_name = 'Button')
+        e = self.Element.child_window(title='&Save', class_name='Button')
         return button(e)
 
     @property
     def CancelButton(self):
-        e = self.Element.child_window(title='&Cancel', class_name = 'Button')
+        e = self.Element.child_window(title='&Cancel', class_name='Button')
         return button(e)
 
     @property

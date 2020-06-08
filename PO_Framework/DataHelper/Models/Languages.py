@@ -4,16 +4,17 @@ from sqlalchemy.orm import relationship
 
 Base = declarative_base()  # 创建对象的基类
 
+
 class Languages(Base):  # 定义一个类，继承Base
     __tablename__ = 'Languages'
     __table_args__ = ({"schema": "dbo"})
 
-    #books = relationship('Books') 如果有和其他表的关系就用relationship
+    # books = relationship('Books') 如果有和其他表的关系就用relationship
     languageIncId = Column(INT(), primary_key=True)
     languageSqlId = Column(SMALLINT(), primary_key=True)
-    languageCode = Column(NVARCHAR(10), nullable= True)
-    languageName = Column(NVARCHAR(40), nullable= True)
-    isDeleted = Column(Boolean(), nullable= False)
-    isoLanguageCode = Column(NVARCHAR(10), nullable= True)
+    languageCode = Column(NVARCHAR(10), nullable=True)
+    languageName = Column(NVARCHAR(40), nullable=True)
+    isDeleted = Column(Boolean(), nullable=False)
+    isoLanguageCode = Column(NVARCHAR(10), nullable=True)
     isSupported = Column(Boolean(), nullable=False)
-    translationTag = Column(NVARCHAR(40), nullable= True)
+    translationTag = Column(NVARCHAR(40), nullable=True)

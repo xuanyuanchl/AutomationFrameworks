@@ -1,5 +1,5 @@
 from DataHelper.Models.Languages import Languages
-from DataHelper.EOLDBAccess import dbAccess
+from DataHelper.DBAccess import dbAccess
 
 
 def Create(languageIncId, languageSqlId, languageCode,

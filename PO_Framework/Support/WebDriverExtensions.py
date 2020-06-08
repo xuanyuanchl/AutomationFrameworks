@@ -8,6 +8,7 @@ Created on May 10, 2020
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common.exceptions import TimeoutException
 
+
 class webDriverExtensions:
 
     @staticmethod
@@ -52,7 +53,8 @@ class webDriverExtensions:
             waiter = WebDriverWait(driver, timeoutInSeconds)
             try:
                 return waiter.until(lambda d: d.find_elements(locator, objectstring),
-                                    f'Cannot find any web element({locator}, {objectstring}) in {timeoutInSeconds} seconds')
+                                    f'Cannot find any web element({locator}, {objectstring}) '
+                                    f'in {timeoutInSeconds} seconds')
             except TimeoutException:
                 return None
 

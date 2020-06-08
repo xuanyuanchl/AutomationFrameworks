@@ -6,6 +6,7 @@ Created on May 11, 2020
 '''
 from ProjectAutomated.Flows.HomePageFlow import homePageFlow
 
+
 class viewYourProfilePageFlow(homePageFlow):
     def __init__(self, navigator, viewyourProfilePage):
         homePageFlow.__init__(self, navigator, viewyourProfilePage)
@@ -13,5 +14,3 @@ class viewYourProfilePageFlow(homePageFlow):
     @property
     def GetSearchText(self):
         self.Page.SearchText.getValue()
-
-

@@ -10,5 +10,5 @@ from Control.ControlBase import controlBase
 
 
 class div(controlBase):
-    def __init__(self, driver, selector:dict = None, element:webelement = None):
+    def __init__(self, driver, selector: dict = None, element: webelement = None):
         super().__init__(driver, selector, element)

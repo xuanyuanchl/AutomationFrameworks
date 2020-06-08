@@ -14,19 +14,19 @@ class table:
     tableRows: None
     wrappedElement: None
 
-    def __init__(self, driver = None, selector: dict = None , element:webelement = None):
+    def __init__(self, driver=None, selector: dict = None, element: webelement = None):
         """
 
         :param driver: web driver
         :param selector: pass the By and value in selector
-        :param element: a table which is a webelement
+        :param element: a table which is a web element
         """
         if element is not None:
             self.wrappedElement = element
-        if driver is not None and selector is not None :
+        if driver is not None and selector is not None:
             locator, objectstring = sorted(selector.items())[0]
             self.wrappedElement = driver.find_element(locator, objectstring)
-        if driver == selector == element == None:
+        if driver == selector == element is None:
             raise AssertionError('Please specify a way to find the table, '
                                  'if using driver.find_element, please pass necessary driver and selector '
                                  'else pass the element directly.')
@@ -38,4 +38,3 @@ class table:
         for tablerow in self.tableRows:
             rows.append(tableRow(tablerow))
         return rows
-

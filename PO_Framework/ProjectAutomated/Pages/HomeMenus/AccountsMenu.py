@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Created on May 11, 2020
 
 @author: O5LT
-'''
+"""
 from selenium.webdriver.common.by import By
 from Control.Link import link
 from ProjectAutomated.HomePage import homePage

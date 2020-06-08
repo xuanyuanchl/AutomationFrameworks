@@ -9,6 +9,7 @@ from ProjectAutomated.EOLFlow import eolFlow
 from ProjectAutomated.Pages.WelcomePage import welcomePage
 from ProjectAutomated.Flows.WelcomePageFlow import welcomePageFlow
 
+
 class loginPageFlow(eolFlow):
     def __init__(self, navigator, loginpage):
         super().__init__(navigator, loginpage)

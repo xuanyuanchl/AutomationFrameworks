@@ -6,6 +6,7 @@ Created on May 10, 2020
 """
 from selenium.webdriver.support.wait import WebDriverWait
 
+
 class jsWaiter:
     """this class is to fix the page load issue like page has jquery, angular js request"""
 
@@ -27,13 +28,13 @@ class jsWaiter:
     @classmethod
     def JSEval(cls, driver, script):
         result = driver.execute_script(script)
-        if(result is None):
+        if (result is None):
             return False
         else:
             return result
 
     @classmethod
-    def __JSWait(self, driver, script, timeout):
+    def __JSWait(cls, driver, script, timeout):
         waiter = WebDriverWait(driver, timeout)
         waiter.until(lambda d: jsWaiter.JSEval(driver, script))
 
@@ -53,9 +54,9 @@ class jsWaiter:
         waiter.until(lambda d: cls.__AngularHasFinishedProcessing(d))
 
     @classmethod
-    def __AngularHasFinishedProcessing(self, driver):
-        result = driver.execute_async_script(self.SCRIPT)
-        if(result is None):
+    def __AngularHasFinishedProcessing(cls, driver):
+        result = driver.execute_async_script(cls.SCRIPT)
+        if (result is None):
             return False
         else:
             return result

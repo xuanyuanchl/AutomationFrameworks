@@ -11,8 +11,8 @@ import smtplib
 class SendMail:
     """to send mail"""
 
-    def __init__(self,  file_path):
-        file = os.path.join(os.getcwd(), 'MailSender',  'emailJson.json')
+    def __init__(self, file_path):
+        file = os.path.join(os.getcwd(), 'MailSender', 'emailJson.json')
         jp = jsonParse()
         jp.loadJson(file)
 
@@ -52,7 +52,7 @@ class SendMail:
             basename = os.path.basename(self.file_path.split('/')[-1])
             data = open(self.file_path, 'rb')
             file_msg = MIMEApplication(data.read())
-            #file_msg = MIMEBase('text', 'html', filename=basename)
+            # file_msg = MIMEBase('text', 'html', filename=basename)
             file_msg.add_header('Content-Disposition',
                                 'attachment', filename=basename)
             # file_msg.set_payload(data.read())
@@ -75,8 +75,9 @@ class SendMail:
 
         return full_text
 
+
 class jsonParse:
-    data: object = None
+    data = {}
 
     def loadJson(self, file):
         with open(file) as fp:

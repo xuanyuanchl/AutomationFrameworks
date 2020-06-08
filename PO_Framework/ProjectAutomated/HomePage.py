@@ -10,6 +10,7 @@ from Control.Link import link
 from PageBase.pageBase import pageBase
 from asq import query
 
+
 class homePage(pageBase):
     def __init__(self, pageUrl):
         super().__init__(pageUrl)

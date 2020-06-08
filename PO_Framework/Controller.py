@@ -32,9 +32,9 @@ class contoller:
 if __name__ == '__main__':
     executor = contoller()
     testResultsFolder = os.path.join(
-                    os.getcwd(), "./TestResults")
+        os.getcwd(), "./TestResults")
     if not os.path.exists(testResultsFolder):
-                    os.makedirs(testResultsFolder)
+        os.makedirs(testResultsFolder)
     html_report = testResultsFolder + "/test_report_" + executor.CurrentTime + ".html"
     with open(html_report, 'wb') as fp:
         runner = HTMLTestRunner.HTMLTestRunner(

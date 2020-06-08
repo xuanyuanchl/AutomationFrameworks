@@ -76,7 +76,7 @@ class navigator:
         fileName = fileName + '.png'
         try:
             self.__driver.save_screenshot(fileName)
-        except Exception as e:
+        except Exception:
             self.SaveImage(fileName)
 
     def CompareCurrentPageUrlToTarget(self, targetPage):
